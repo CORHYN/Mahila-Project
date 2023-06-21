@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+  }
+  .company {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  .company-image {
+    max-width: 200px;
+    margin-right: 20px;
+  }
+  .company-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .company-description h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .company-description p {
+    margin: 0;
+    color: #666;
+  }
+  .company-description a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .company-description a:hover {
+    text-decoration: underline;
+  }

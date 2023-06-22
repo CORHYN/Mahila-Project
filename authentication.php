@@ -1,13 +1,18 @@
 <?php
+session_start();
 include_once("connectDB.php");
+mysqli_select_db($con,"mahila");
 if($_POST){
     $username = $_POST['username'];
     $password = sha1($_POST['password']);
-    $sql = "SELECT * FROM users WHERE username='$username'";
+    $sql = "SELECT username,pass,userid FROM user_table WHERE username='$username';";
     $results = mysqli_fetch_array(mysqli_query($con,$sql));
-    if($results['passwords'] == $password){
-        session_start();
-        $_SESSION['login'] = $results['access'];
+    if($results['pass'] == $password){
+        $token = rand(1000,9999999);
+        $sql = "UPDATE user_table SET tokenid=$token WHERE userid=$results[userid];";
+        mysqli_query($con,$sql);
+        $_SESSION['userid'] = $results['userid'];
+        $_SESSION['token'] = $token;
         header("Location:homepage.php");
     }else{
         echo "Password or username was incorrect";

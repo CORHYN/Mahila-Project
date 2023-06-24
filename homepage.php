@@ -28,9 +28,9 @@ mysqli_close($con);
   <title>Home Page</title>
   <link rel="stylesheet" href="CSS/homepage.css">
 </head>
-<body>
+<body class="parent">
   <h1>Choose a company that interests you</h1>
-
+  <div class="div6">
   <div class="company">
     <img class="company-image" src="images/company1.jpg" alt="Company 1">
     <div class="company-description">
@@ -60,13 +60,14 @@ mysqli_close($con);
       <a href="company3.html">Learn More</a>
     </div>
   </div>
-
+  </div>
   <!-- Add more companies -->
-  <div>
-    <form action="logout.php">
+  <div class="div1">
+  <form action="logout.php">
       <button type="submit" class="logout">Log out</button>
     </form>
   </div>
+
   <?php
   ?>
 

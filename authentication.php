@@ -14,8 +14,12 @@ if($_POST){
         $_SESSION['userid'] = $results['userid'];
         $_SESSION['token'] = $token;
         header("Location:homepage.php");
+        exit();
     }else{
+        session_unset();
+        session_destroy();
         echo "Password or username was incorrect";
+        header("Location:login.html");
     }
 }
 mysqli_close($con);

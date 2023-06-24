@@ -17,6 +17,7 @@
             return true;
         }
     </script>
+    <link rel="stylesheet" href="CSS/registration.css">
 </head>
 <body>
     <h2>User Registration</h2>
@@ -33,6 +34,22 @@
         <label for="retype-password">Password:</label>
         <input type="password" name="retype-password" id="retype-password" required><br><br>
         
+        <label for="addr">Address:</label>
+        <input type="text" id="addr" name="addr" maxlength="35" required><br><br>
+        
+        <label for="education">Education:</label>
+        <textarea id="education" name="education" rows="5" cols="30" maxlength="150" required></textarea><br><br>
+        
+        <label for="experience">Years of Experience:</label>
+        <input type="number" id="experience" name="experience" min="0" max="99" required><br><br>
+        
+        <label for="workhistory">Work History:</label>
+        <textarea id="workhistory" name="workhistory" rows="5" cols="30" maxlength="200" required></textarea><br><br>
+        
+        <label for="socialmedia">Social Media Accounts:</label>
+        <textarea id="socialmedia" name="socialmedia" rows="5" cols="30" maxlength="200" required></textarea><br><br>
+        
+
         <input type="submit" value="Register">
     </form>
 </body>

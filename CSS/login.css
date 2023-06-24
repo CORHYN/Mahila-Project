@@ -1,76 +1,112 @@
-body {
-    font-family: 'Times New Roman', Times, serif;
-  }
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
 
-  .container {
-    width: 511px;
-    height: 533px;
-    margin: 100px auto; 
-    background: #969696;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.container{
+  width: 511px;
+  height: 533px;
+  flex-shrink: 0; 
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #FFF;
+  box-shadow: 0px 6px 50px 6px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+}
 
-  .container h2 {
-    font-family: 'Inter';
-    font-style: italic;
-    font-weight: 200;
-    font-size: 48px;
-    line-height: 58px;
-    text-align: center;
-    color: #6BCB49;
-    mix-blend-mode: normal;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 20px;
-  }
+#title{
+  text-align: center;
+  font-size: 48px;
+  font-family: Kumar One; 
+  background: linear-gradient(to left,#DF9BEA, #500A5B);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
 
-  .container label {
-    display: block;
-    margin-top: 30px;
-    font-weight: bold;
-    color: #FFFFFF;
-  }
+#username{
+  margin: 20% auto auto auto;
+  font-family: Kumar One; 
+  width: 368px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: #FFF; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .container input[type="text"],
-  .container input[type="password"] {
-    width: 100%;
-    height: 40px;
-    padding: 5px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 20px;
-    
-    text-transform: uppercase;
-    color: #FFFFFF;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-  }
+}
 
-  .container input[type="submit"] {
-    width: 100%;
-    height: 40px;
-    margin-top: 30px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-    border: none;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+#password{
+  margin: 4% auto auto auto;
+  font-family: Kumar One; 
+  width: 368px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: #FFF; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .forgot-password {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 14px;
-    color: #FFFFFF;
-    text-decoration: none;
-  }
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login{
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+  font-family: Kumar One; 
+  width: 133px;
+  height: 51px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #9D58A8; 
+  margin-right: 17%;
+}
+#login:hover{
+  color:#000;
+  text-align: center;
+  font-size: 16px;
+  font-family: Kumar One; 
+  width: 133px;
+  height: 51px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #9d58a89c; 
+}
+
+#Sign-Up{  
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+  font-family: Kumar One; 
+  width: 133px;
+  height: 51px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #9D58A8; 
+}
+
+#Sign-Up:hover{
+  color:#000;
+  text-align: center;
+  font-size: 16px;
+  font-family: Kumar One; 
+  width: 133px;
+  height: 51px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  background: #9d58a89c; 
+}
+

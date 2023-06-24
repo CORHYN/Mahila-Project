@@ -1,10 +1,10 @@
 CREATE TABLE company (
     id INT,
-    name VARCHAR(255),
+    cname VARCHAR(255),
     registration_number VARCHAR(50),
     company_id VARCHAR(50),
     email VARCHAR(255),
-    password VARCHAR(255),
+    pass VARCHAR(255),
     year_of_founding YEAR,
     number_of_employees INT
 );
@@ -13,10 +13,10 @@ CREATE TABLE job_listing (
     id INT AUTO_INCREMENT PRIMARY KEY,
     company_id INT,
     job_title VARCHAR(255),
-    description TEXT,
+    descp TEXT,
     pay DECIMAL(10, 2),
     position VARCHAR(255),
-    open BOOLEAN,
+    jopen BOOLEAN,
     userid VARCHAR(10),
     FOREIGN KEY (company_id) REFERENCES company(id),
     FOREIGN KEY (userid) REFERENCES user_table(userid)

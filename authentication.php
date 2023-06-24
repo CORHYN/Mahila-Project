@@ -3,8 +3,8 @@ session_start();
 include_once("connectDB.php");
 mysqli_select_db($con,"mahila");
 if($_POST){
-    $username = $_POST['username'];
-    $password = sha1($_POST['password']);
+    $username = trim($_POST['username']);
+    $password = sha1(trim($_POST['password']));
     $sql = "SELECT username,pass,userid FROM user_table WHERE username='$username';";
     $results = mysqli_fetch_array(mysqli_query($con,$sql));
     if($results['pass'] == $password){

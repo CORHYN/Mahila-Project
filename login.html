@@ -5,24 +5,23 @@
   <link rel="stylesheet" href="CSS/login.css">
   <script>
     function gotoreg(){
-      window.location.href="registration.html";
+      window.location.href="registration.php";
+    }
+    function clear(){
+      document.getElementById("loginform").reset();
     }
   </script>
 </head>
 <body>
   <div class="container">
     <h2 id="title">MAHILA</h2>
-    <form action="authentication.php" method="post">
-      <!--<label for="username">Username</label>-->
-      
-      <input class="input" type="text" id="username" name="username" placeholder="    USERNAME" required>
-
-      <!--<label for="password">Password</label>-->
-      
-      <input class="input" type="password" id="password" name="password" placeholder="    PASSWORD" required>
+    <form action="authentication.php" method="post" id="loginform">
+      <input class="input" type="text" id="username" name="username" placeholder="USERNAME" required>
+      <input class="input" type="password" id="password" name="password" placeholder="PASSWORD" required>
       <br>
       <div class="button">
-        <input class="button" id="login" type="submit" value="Log in"> <button onclick="gotoreg()"  id="Sign-Up">Sign-Up</button>
+        <input class="login" id="login" type="reset" value="Log in" onclick="submit()"> 
+        <button type="reset" onclick="gotoreg()" id="Sign-Up">Sign-Up</button>
       </div>
     </form>
   </div>

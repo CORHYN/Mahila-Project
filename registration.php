@@ -31,7 +31,7 @@
             echo "Username is already taken. Please choose a different username.";
         } else {
             $userid = rand(1000, 999999999);
-            $sql = "INSERT INTO user_table(userid,username,pass,email,addr,education,yearsofexperiance,workhistory,socialmediaaccounts) 
+            $sql = "INSERT INTO user_table(userid,username,pass,email,addr,education,yearsofexperience,workhistory,socialmediaaccounts) 
             VALUES ('$userid','$username','$password','$email','$address','$education',$experience,'$workhistory','$socialmedia');";
             if (!mysqli_query($con, $sql)) {
                 die("Error : couldn't create and account" . mysqli_connect_error());

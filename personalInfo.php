@@ -8,7 +8,7 @@ if (!isset($_SESSION['userid'])) {
   exit();
 }
 
-// Retrieve user ID 
+
 $userid = $_SESSION['userid'];
 
 $conn = mysqli_connect("localhost", "ma zejun", "mazejun2001", "mahila");
@@ -81,7 +81,7 @@ if (mysqli_num_rows($result) > 0) {
       <tr><th>Username</th><td><?php echo $row['username']; ?></td></tr>
       <tr><th>Email</th><td><?php echo $row['email']; ?></td></tr>
       <tr><th>Address</th><td><?php echo $row['addr']; ?></td></tr>
-      <!-- add more information -->
+      <!-- add more information when our user-table update-->
     </table>
 
   </div>
@@ -93,6 +93,5 @@ if (mysqli_num_rows($result) > 0) {
   echo "User not found.";
 }
 
-// Close the database connection
 mysqli_close($conn);
 ?>

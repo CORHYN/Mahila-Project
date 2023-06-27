@@ -11,12 +11,14 @@ if (isset($_SESSION['userid'])) {
   } else {
     session_unset();
     session_destroy();
+    mysqli_close($con);
     header("Location:login.html");
     exit();
   }
 } else {
   session_unset();
   session_destroy();
+  mysqli_close($con);
   header("Location:login.html");
   exit();
 }
@@ -35,32 +37,50 @@ mysqli_close($con);
     -->
 
 <body>
+
   <div class="parent">
+    <div class="div8">
+      <div class="heading"></div>
+    </div>
     <div class="div1">
       <form action="logout.php">
         <button type="submit" class="logout">Log out</button>
       </form>
     </div>
-    <div class="div2"></div>
-    <div class="div3"></div>
-    <div class="div4"></div>
+    <div class="div2">
+      <button type="button" class="logout" onclick="window.location.href='personalinfo.php';">Profile</button>
+    </div>
+    <div class="div3">
+    <button type="button" class="logout"></button>
+    </div>
+    <div class="div4">
+    <button type="button" class="logout"></button>
+    </div>
     <div class="div5"></div>
     <div class="div6">
-      <div class="list-container">
-        <ul class="scrollable-list">
-          <?php
-          $conn = mysqli_connect("localhost", "root", "");
-          mysqli_select_db($conn, "mahila");
-          $result = mysqli_query($conn, "SELECT * FROM company;");
-          while ($row = mysqli_fetch_array($result)) {
-            echo "<li><a href='https://www.google.com'>$row[cname]</a></li>";
-          }
-          mysqli_close($conn);
-          ?>
-        </ul>
+      <div class="box">
+        <div class="list-container">
+          <ul class="scrollable-list">
+            <?php
+            $conn = mysqli_connect("localhost", "root", "");
+            mysqli_select_db($conn, "mahila");
+            $result = mysqli_query($conn, "SELECT * FROM company;");
+            while ($row = mysqli_fetch_array($result)) {
+              echo "<li><a href='https://www.google.com'>$row[cname]</a></li>";
+            }
+            mysqli_close($conn);
+            ?>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="div7"></div>
+    <div class="div7">
+      <form action="search.php" method="post">
+        <input type="text" name="value" id="value">
+        <input type="hidden" name="searchb" value="true" onkeypress="sumbit()" >
+      </form>
+    </div>
   </div>
 </body>
+
 </html>

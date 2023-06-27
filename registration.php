@@ -7,14 +7,14 @@
     mysqli_select_db($con,"mahila");
     if ($_POST) {
         mysqli_select_db($con, "mahila");
-        $username = trim($_POST['username']);
-        $password = sha1(trim($_POST['password']));
+        $username = $_POST['username'];
+        $password = sha1($_POST['password']);
         $email = trim($_POST['email']);
-        $address = trim($_POST['addr']);
-        $education = trim($_POST['education']);
-        $experience = trim($_POST['experience']);
-        $workhistory = trim($_POST['workhistory']);
-        $socialmedia = trim($_POST['socialmedia']);
+        $address = $_POST['addr'];
+        $education = $_POST['education'];
+        $experience = $_POST['experience'];
+        $workhistory = $_POST['workhistory'];
+        $socialmedia = $_POST['socialmedia'];
 
         $sql1 = "SELECT username FROM user_table";
         $result = mysqli_query($con, $sql1);

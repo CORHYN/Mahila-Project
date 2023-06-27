@@ -37,6 +37,9 @@ mysqli_close($con);
 <body>
   <div class="parent">
     <div class="div1">
+    <form action="personalInfo.php">
+        <button type="submit" class="profile">Profile</button>
+      </form>
       <form action="logout.php">
         <button type="submit" class="logout">Log out</button>
       </form>

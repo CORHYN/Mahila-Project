@@ -1,6 +1,8 @@
 <?php
 include_once("connectDB.php");
 session_start();
+$con = mysqli_connect("localhost", "ma zejun", "mazejun2001");
+mysqli_select_db($con, "mahila");
 if (isset($_SESSION['userid'])) {
   $userid = $_SESSION['userid'];
   $token = $_SESSION['token'];

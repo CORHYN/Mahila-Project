@@ -1,6 +1,8 @@
 <?php
 include_once("connectDB.php");
 session_start();
+$con = mysqli_connect("localhost", "ma zejun", "mazejun2001");
+mysqli_select_db($con, "mahila");
 if (isset($_SESSION['userid'])) {
   $userid = $_SESSION['userid'];
   $token = $_SESSION['token'];
@@ -43,6 +45,9 @@ mysqli_close($con);
       <div class="heading"></div>
     </div>
     <div class="div1">
+    <form action="personalInfo.php">
+        <button type="submit" class="profile">Profile</button>
+      </form>
       <form action="logout.php">
         <button type="submit" class="logout">Log out</button>
       </form>

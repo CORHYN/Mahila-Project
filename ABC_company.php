@@ -80,15 +80,22 @@
 <div class="container">
    <!-- Company information -->
     <?php
+<<<<<<< HEAD
     $conn = mysqli_connect("localhost", "root", "");
+=======
+    $conn = mysqli_connect("localhost", "ma zejun", "mazejun2001");
+>>>>>>> b37e564f8b5cf493bed83b7d8e507a48f41045c6
     mysqli_select_db($conn, "mahila");
     $companyQuery = mysqli_query($conn, "SELECT * FROM company LIMIT 1");
     $companyData = mysqli_fetch_assoc($companyQuery);
     echo '<div class="content">';
     echo '<h2>Welcome to ' . $companyData['cname'] . '</h2>';
     echo '<img class="company-image" src="company1.jpg" alt="' . $companyData['cname'] . '">';
+<<<<<<< HEAD
     echo '<p>Registration Number: ' . $companyData['registration_number'] . '</p>';
     echo '<p>company_id: ' . $companyData['company_id'] . '</p>';
+=======
+>>>>>>> b37e564f8b5cf493bed83b7d8e507a48f41045c6
     echo '<p>Email: ' . $companyData['email'] . '</p>';
     echo '<p>Year of Founding: ' . $companyData['year_of_founding'] . '</p>';
     echo '<p>Number of Employees: ' . $companyData['number_of_employees'] . '</p>';
@@ -109,7 +116,11 @@
       echo '<p class="job-info">Pay: ' . $jobData['pay'] . '</p>';
       echo '<p class="job-info">Position: ' . $jobData['position'] . '</p>';
       echo '<p class="job-info">Open Date: ' . $jobData['jopen'] . '</p>';
+<<<<<<< HEAD
       echo '<p class="job-info">User ID: ' . $jobData['userid'] . '</p>';
+=======
+      ///echo '<p class="job-info">User ID: ' . $jobData['userid'] . '</p>';
+>>>>>>> b37e564f8b5cf493bed83b7d8e507a48f41045c6
       echo '</div>';
     }
     echo '</div>';
@@ -119,4 +130,8 @@
     ?>
   </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b37e564f8b5cf493bed83b7d8e507a48f41045c6

@@ -79,3 +79,13 @@
       background: linear-gradient(360deg, rgba(176, 176, 176, 0.8) 0%, rgba(12, 12, 12, 0.952) 100%);
     }
 
+    .profile {
+      width: 191px;
+      height: 58px;
+      border-radius: 33px;
+      margin-bottom: 50px;
+      border: 1px solid #C0C0C0;
+      background: linear-gradient(360deg, rgba(235, 2, 184, 0.44) 0%, rgba(221, 221, 221, 0.432) 100%);
+    
+    }
+    

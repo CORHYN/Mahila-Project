@@ -15,18 +15,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $foundingYear = $_POST["foundingYear"];
 
 
-    $checkQuery = "SELECT * FROM company WHERE name = '$companyName'";
+    $checkQuery = "SELECT * FROM company WHERE cname = '$companyName'";
     $checkResult = $conn->query($checkQuery);
     if ($checkResult->num_rows > 0) {
     
         echo "company is exist";
     } else {
+        $randomNumber = rand(11, 1000);
+        $insertQuery = "INSERT INTO company(cname, registration_number , number_of_employees, year_of_founding, id)VALUES ('$companyName', '$registrationNo', '$employeeCount', '$foundingYear', $randomNumber);";
 
-        $insertQuery = "INSERT INTO company (name, registration_no, employee_count, founding_year)
-                        VALUES ('$companyName', '$registrationNo', '$employeeCount', '$foundingYear')";
-
-        if ($conn->query($insertQuery) === TRUE) {
+        if (mysqli_query($conn,$insertQuery)) {
             echo "register successful";
+            $conn->close();
+            header("Location: Companylogin.html");
+            exit();
         } else {
             echo "register fail" . $conn->error;
         }
@@ -47,7 +49,7 @@ $conn->close();
 
 <div class="registration-form">
         <h2 class="title">Company Registration</h2>
-        <form method="POST" action="registration.php">
+        <form method="POST" action="companyRegister.php">
             <div class="name">
                 <label for="name">Company name:</label><br>
                 <input type="text" name="name" id="name" class="text" required maxlength="25"><br><br>
@@ -68,6 +70,10 @@ $conn->close();
             <div class="foundingYear">
                 <label for="foundingYear">Founding Year:</label>
                 <input type="text" name="foundingYear" id="foundingYear" class="text" required maxlength="100"><br><br>
+            </div>
+            <div class="Registration">
+                <label for="registrationNo">Register No:</label>
+                <input type="text" name="registrationNo" id="registrationNo" class="text" required maxlength="100"><br><br>
             </div>
             <input type="submit" value="Register" class="register">
         </form>

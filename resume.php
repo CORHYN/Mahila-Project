@@ -1,3 +1,40 @@
+<?php
+include_once("connectDB.php");
+session_start();
+if (isset($_SESSION['userid'])) {
+  $userid = $_SESSION['userid'];
+  $token = $_SESSION['token'];
+  $result = mysqli_query($con, "SELECT tokenid FROM user_table WHERE userid='$userid'");
+  $row = mysqli_fetch_array($result);
+  if ($row['tokenid'] == $token) {
+  } else {
+    session_unset();
+    session_destroy();
+    mysqli_close($con);
+    header("Location:login.html");
+    exit();
+  }
+} else {
+  session_unset();
+  session_destroy();
+  mysqli_close($con);
+  header("Location:login.html");
+  exit();
+}
+
+// Fetch the user's profile information based on the user ID
+$query = "SELECT * FROM user_table WHERE userid = '$userid'";
+$result = mysqli_query($con, $query);
+
+// Check if a user with the given ID exists
+if (mysqli_num_rows($result) > 0) {
+  $row = mysqli_fetch_assoc($result);
+} else {
+  echo "User not found.";
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,20 +89,6 @@
   
   <form action="submit_resume.php" method="post">
 
-    <label for="company">Choose your favorite company:</label>
-    <select id="company" name="company">
-      <option value="ABC Corporation">ABC Corporation</option>
-      <option value="XYZ Industries">XYZ Industries</option>
-      <option value="123 Corporation">123 Corporation</option>
-      <option value="Tech Solutions Ltd">Tech Solutions Ltd</option>
-      <option value="Global Enterprises">Global Enterprises</option>
-      <option value="Acme Inc.">Acme Inc.</option>
-      <option value="Innovative Technologies">Innovative Technologies</option>
-      <option value="Mega Corp9">Mega Corp9</option>
-      <option value="Eco Solutions">Eco Solutions</option>
-      <option value="Software Solutions Ltd">Software Solutions Ltd</option>
-    </select>
-
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -91,6 +114,10 @@
     <textarea id="describe_yourself" name="describe_yourself" rows="6" required></textarea>
 
     <button type="submit">Submit</button>
+    <?php echo "<input type='hidden' name='cid' value='$_POST[cid]'>"; ?>
   </form>
 </body>
 </html>
+<?php
+mysqli_close($con);
+?>

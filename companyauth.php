@@ -10,7 +10,7 @@ if ($_POST) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT email, pass, company_id FROM company WHERE email='$email';";
+    $sql = "SELECT * FROM company WHERE email='$email';";
     $result = mysqli_query($con, $sql);
 
     if ($result && mysqli_num_rows($result) == 1) {
@@ -18,6 +18,7 @@ if ($_POST) {
 
         if ($row['pass'] == $password) {
             $_SESSION['company_id'] = $row['company_id'];
+            $_SESSION['id'] = $row['id'];
             mysqli_close($con);
             header("Location: ABC_company.php");
             exit();

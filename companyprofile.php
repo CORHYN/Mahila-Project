@@ -67,6 +67,9 @@ if (isset($_SESSION['userid'])) {
         $r = mysqli_query($con, $sql2);
         $row = mysqli_fetch_array($r);
         echo "<p>$row[cname]</p>";
+        echo "<p>$row[email]</p>";
+        echo "<p>$row[year_of_founding]</p>";
+        echo "<p>$row[number_of_employees]</p>";
         ?>
         <form action="applyjob.php" method="post">
           <input type="submit" value="APPLY" class="logout" name="submit">

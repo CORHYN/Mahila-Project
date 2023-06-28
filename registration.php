@@ -55,9 +55,6 @@
             }
             return true;
         }
-        fuction resetform(){
-            document.getElementById("f").reset();
-        }
     </script>
     <link rel="stylesheet" href="CSS/registration.css">
 </head>
@@ -78,7 +75,7 @@
                 <input type="password" name="password" id="password" class="text" required maxlength="50"><br><br>
             </div>
             <div class="retype-password">
-                <label for="retype-password">Password:</label>
+                <label for="retype-password">Confirm Password:</label>
                 <input type="password" name="retype-password" id="retype-password" class="text" required maxlength="50"><br><br>
             </div>
             <div class="address">

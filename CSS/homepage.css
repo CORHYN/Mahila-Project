@@ -6,7 +6,6 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
@@ -47,7 +46,7 @@
 
 
 .list-container {
-  max-height: 100svh;
+  max-height: 559px;
   /* Set the maximum height of the container */
   overflow-y: auto;
   /* Enable vertical scrolling */

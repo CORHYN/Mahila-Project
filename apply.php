@@ -30,6 +30,6 @@ $cid = $_POST['cid'];
 $sql = "UPDATE job_listing SET jopen=1,userid='$userid' WHERE jid=$jid  AND company_id=$cid; ";
 mysqli_query($con,$sql);
 mysqli_close($con);
-header("Location:applyjob.php");
+header("Location:resume.php");
 exit();
 ?>

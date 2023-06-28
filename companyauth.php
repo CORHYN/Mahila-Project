@@ -1,25 +1,34 @@
 <?php
 session_start();
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "mahila"; 
 include_once("connectDB.php");
-mysqli_select_db($con, "mahila");
+
 if ($_POST) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $sql = "SELECT email,pass,company_id  FROM company WHERE email='$email';";
-    $results = mysqli_fetch_array(mysqli_query($con, $sql));
-    if ($results['pass'] == $password) {
-        mysqli_query($con, $sql);
-        $_SESSION['company_id'] = $results['company_id'];
-        mysqli_close($con);
-        header("Location:companyprofile.php");
-        exit();
-    } else {
-        session_unset();
-        session_destroy();
-        echo "Password or email was incorrect";
-        mysqli_close($con);
-        header("Location:Companylogin.html");
-        exit();
-    }
+
+    $sql = "SELECT email, pass, company_id FROM company WHERE email='$email';";
+    $result = mysqli_query($con, $sql);
+
+    if ($result && mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        if ($row['pass'] == $password) {
+            $_SESSION['company_id'] = $row['company_id'];
+            mysqli_close($con);
+            header("Location: ABC_company.php");
+            exit();
+        } else {
+            echo "email or password error";
+            mysqli_close($con);
+            header("Location: Companylogin.html");
+            exit();
+        }
+    } 
 }
+
 mysqli_close($con);
+?>

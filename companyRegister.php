@@ -16,10 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     $checkQuery = "SELECT * FROM company WHERE cname = '$companyName'";
+    $checkQuery = "SELECT * FROM company WHERE cname = '$companyName'";
     $checkResult = $conn->query($checkQuery);
     if ($checkResult->num_rows > 0) {
     
-        echo "company is exist";
+        echo "company already exists"; 
     } else {
         $randomNumber = rand(11, 1000);
         $insertQuery = "INSERT INTO company(cname, registration_number , number_of_employees, year_of_founding, id)VALUES ('$companyName', '$registrationNo', '$employeeCount', '$foundingYear', $randomNumber);";
@@ -30,19 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: Companylogin.html");
             exit();
         } else {
-            echo "register fail" . $conn->error;
+            echo "registration failed: " . $conn->error; 
         }
     }
 }
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Company Registration</title>
 
-    <link rel="stylesheet" href="company.css">
+    <link rel="stylesheet" href="CSS/company.css">
 </head>
 
 <body>
@@ -61,6 +63,11 @@ $conn->close();
             <div class="retype-password">
                 <label for="retype-password">Password:</label>
                 <input type="password" name="retype-password" id="retype-password" class="text" required maxlength="50"><br><br>
+            </div>
+
+            <div class="registrationNo">
+                <label for="registrationNo">Registration No:</label>
+                <input type="number" name="registrationNo" id="registrationNo" class="text" required maxlength="1000"><br><br>
             </div>
 
             <div class="employeeCount">

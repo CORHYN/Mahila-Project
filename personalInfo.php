@@ -106,6 +106,6 @@ if (mysqli_num_rows($result) > 0) {
 </body>
 </html>
 <?php
-// Close the database connection
+
 mysqli_close($con);
 ?>

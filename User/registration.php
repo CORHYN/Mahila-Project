@@ -10,11 +10,6 @@
         $username = $_POST['username'];
         $password = sha1($_POST['password']);
         $email = trim($_POST['email']);
-        $address = $_POST['addr'];
-        $education = $_POST['education'];
-        $experience = $_POST['experience'];
-        $workhistory = $_POST['workhistory'];
-        $socialmedia = $_POST['socialmedia'];
 
         $sql1 = "SELECT username FROM user_table";
         $result = mysqli_query($con, $sql1);
@@ -30,9 +25,8 @@
             // Username is not unique
             echo "Username is already taken. Please choose a different username.";
         } else {
-            $userid = rand(1000, 999999999);
-            $sql = "INSERT INTO user_table(userid,username,pass,email,addr,education,yearsofexperience,workhistory,socialmediaaccounts) 
-            VALUES ('$userid','$username','$password','$email','$address','$education',$experience,'$workhistory','$socialmedia');";
+            $sql = "INSERT INTO user_table(username,pass,email) 
+            VALUES ('$username','$password','$email');";
             if (!mysqli_query($con, $sql)) {
                 die("Error : couldn't create and account" . mysqli_connect_error());
             } else {
@@ -77,26 +71,6 @@
             <div class="retype-password">
                 <label for="retype-password">Confirm Password:</label>
                 <input type="password" name="retype-password" id="retype-password" class="text" required maxlength="50"><br><br>
-            </div>
-            <div class="address">
-                <label for="addr">Address:</label>
-                <input type="text" id="addr" name="addr" maxlength="35" class="text" required><br><br>
-            </div>
-            <div class="education">
-                <label for="education">Education:</label>
-                <textarea id="education" name="education" rows="5" cols="30" maxlength="150" class="text" required></textarea><br><br> 
-            </div>
-            <div class="experience">
-                <label for="experience">Years of Experience:</label>
-                <input type="number" id="experience" name="experience" min="0" max="99" class="scroll" required><br><br>
-            </div>
-            <div class="workhistory">
-                <label for="workhistory">Work History:</label>
-                <textarea id="workhistory" name="workhistory" rows="5" cols="30" maxlength="200" class="text" required></textarea><br><br>
-            </div>
-            <div class="socialmedia">
-                <label for="socialmedia">Social Media Accounts:</label>
-                <textarea id="socialmedia" name="socialmedia" rows="5" cols="30" maxlength="200" class="text" required></textarea><br><br>
             </div>
             <input type="submit" value="Register" class="register">
         </form>

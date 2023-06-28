@@ -1,6 +1,7 @@
 <?php
 session_start();
-include_once("connectDB.php");
+$con = mysqli_connect("localhost","root","");
+mysqli_select_db($con,"mahila");
 mysqli_select_db($con,"mahila");
 if($_POST){
     function isValid($teststring) {
@@ -9,7 +10,6 @@ if($_POST){
         }
         return false;
     }
-
     if(isValid(trim($_POST['username'])) && isValid(trim($_POST['password']))){
         $username = $_POST['username'];
         $password = sha1($_POST['password']);

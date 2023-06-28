@@ -1,0 +1,16 @@
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilebox{
+    margin-top: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 500px;
+    height: auto;
+    background-color: #ffffff67;
+}

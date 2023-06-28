@@ -132,6 +132,9 @@
       <form action="insertNewJob.php">
         <button type="submit" class="logout">Create New Job</button>
       </form>
+      <form action="viewapplied.php">
+        <button onclick="window.location.href='viewapplied.php';">View Applied Users</button>
+      </form>
   </div>
 </body>
 </html>

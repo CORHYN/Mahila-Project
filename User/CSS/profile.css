@@ -13,4 +13,41 @@
     width: 500px;
     height: auto;
     background-color: #ffffff67;
+    font-family: Comfortaa, sans-serif;
+}
+.profilebox form input[type="file"]{
+    width: 86px;
+}
+
+.profilebox form input[type="submit"]{
+    font-family: Comfortaa, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to left, #ffffff67, rgba(255,255,255,0.5));
+    width: 80px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.profilebox button{
+    font-family: Comfortaa, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to left, #ffffff67, rgba(255,255,255,0.5));
+    width: 80px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.profilebox button a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.profilebox button a:visited{
+    color: black;
 }

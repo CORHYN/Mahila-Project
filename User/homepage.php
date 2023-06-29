@@ -30,17 +30,20 @@ mysqli_close($con);
 <head>
   <title>Home Page</title>
   <link rel="stylesheet" href="CSS/homepage.css?v=<?php echo time(); ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:ital@1&family=Sora:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
     <div class="boxnavbar">
       <div class="navbar">
+        <a href="homepage.php"><img src="CSS/logo.png" alt="Logo" class="logo"></a>
         <ul>
           <li>
-            <form action="search.php" method="post">
-              <label for="value">Search :</label>
-              <input type="text" name="value" id="value">
+            <form action="search.php" method="post" class='search'>
+              <input type="text" name="value" id="value" class="search" placeholder="Search...">
               <input type="hidden" name="searchb" value="true" onkeypress="sumbit()">
             </form>
           </li>
@@ -49,27 +52,22 @@ mysqli_close($con);
           <li><a href="listofcompanies.php">Companies</a></li>
           <li><a href="logout.php">Log out</a></li>
         </ul>
+
       </div>
     </div>
     <div class="welcome">
       <div class="welcomebox">
-      <h2>Welcome to Mahila</h2>
-        <div id="welcome-message">
-          <script>
-            // JavaScript code to display the welcome message
-            var welcomeMessage = "\
-  \nEmpowering Women in the Job Market\
-  \n\
-  \nAt Mahila, we believe in creating equal opportunities for women in the workforce. Our platform is dedicated to helping women find meaningful employment, develop their careers, and break through any barriers they may face.\
-  \n\
-  \nWhether you're a recent graduate, a seasoned professional, or someone looking to make a career change, we provide a supportive environment where you can explore job opportunities, connect with employers who value diversity and inclusion, and access valuable resources to enhance your skills.\
-  \n";
-            // Display the welcome message in the welcome-message div
-            document.getElementById("welcome-message").innerText = welcomeMessage;
-          </script>
-        </div>
+        <h2>Welcome to Mahila</h2>
+        <p>Empowering Women in the Job Market</p> <br>
+        <p>At Mahila we believe in creating equal opportunities for women in the workforce. Our platform is dedicated to helping women find meaningful employment, develop their careers, and break through any barriers they may face.</p>
+        <p>Whether you're a recent graduate, a seasoned professional, or someone looking to make a career change, we provide a supportive environment where you can explore job opportunities, connect with employers who value diversity and inclusion, and access valuable resources to enhance your skills.</p>
+        <h3>Why Choose Mahila?</h3>
+        <ol >
+          <li>Exclusive Job Listings: We partner with companies that are committed to fostering gender diversity, providing you with a curated list of job openings that value your talents and experience.</li>
+          <li>Confidentiality and Privacy: We prioritize your privacy and ensure that your personal information remains secure throughout the job application process.</li>
+        </ol>    
       </div>
     </div>
-
 </body>
+
 </html>

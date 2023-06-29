@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Register</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+
+        }
+
+        .container {
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #000000;
+            text-align: center;
+        }
+
+        .container h3 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            border-radius: 24px;
+            border: 2px solid #3498db;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: white;
+        }
+
+        .container input[type="submit"] {
+            border-radius: 24px;
+            border: 2px solid #c44baf;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="CompanyRegister.php">
+            <h3>Company Register Account</h1>
+            
+            <input type="text" id="cname" name="cname" required placeholder="Company name">
+
+            <input type="password" id="password" name="password" required placeholder="Password">
+
+        
+            <input type="email" id="email" name="email" required placeholder="Email">
+
+            
+            <input type="text" name="registrationNo" id="registrationNo" required placeholder="Registration No">
+
+           
+            <input type="text" name="company_id" id="company_id" required placeholder="Company ID">
+
+           
+            <input type="text" id="foundYear" name="foundYear" required placeholder="Founding year">
+
+            <input type="text" id="employeeNumber" name="employeeNumber" required placeholder="Employee numbers">
+
+            <input type="submit" value="Registration" name="Registration">
+        </form>
+    </div>
+</body>
+</html>

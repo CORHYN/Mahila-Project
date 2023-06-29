@@ -82,7 +82,9 @@
     <?php
     $conn = mysqli_connect("localhost", "root", "");
     mysqli_select_db($conn, "mahila");
-    $companyQuery = mysqli_query($conn, "SELECT * FROM company LIMIT 1");
+    session_start();
+    if(isset($_SESSION['company_id'])){
+      $companyQuery = mysqli_query($conn, "SELECT * FROM company LIMIT 1");
     $companyData = mysqli_fetch_assoc($companyQuery);
     echo '<div class="content">';
     echo '<h2>Welcome to ' . $companyData['cname'] . '</h2>';
@@ -96,10 +98,10 @@
     ?>
     <h2>Job_listing</h2>
     <?php
-    $conn = mysqli_connect("localhost", "ma zejun", "mazejun2001");
+    $conn = mysqli_connect("localhost", "root", "");
     mysqli_select_db($conn, "mahila");
     echo '<div class="content">';
-    $jobQuery = mysqli_query($conn, "SELECT * FROM job_listing");
+    $jobQuery = mysqli_query($conn, "SELECT * FROM job_listing WHERE company_id=$_SESSION[id]");
     echo '<div class="job-list-container">';
     echo '<div class="job-list">';
     while ($jobData = mysqli_fetch_assoc($jobQuery)) {
@@ -116,7 +118,23 @@
     echo '</div>';
 
     mysqli_close($conn);
+    }else{
+      session_unset();
+      session_destroy();
+      mysqli_close($conn);
+      header("Location: Companylogin.html");
+    }
+    
     ?>
+      <form action="clogout.php">
+        <button type="submit" class="logout">Log out</button>
+      </form>
+      <form action="insertNewJob.php">
+        <button type="submit" class="logout">Create New Job</button>
+      </form>
+      <form action="viewapplied.php">
+        <button onclick="window.location.href='viewapplied.php';">View Applied Users</button>
+      </form>
   </div>
 </body>
 </html>

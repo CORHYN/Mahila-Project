@@ -10,29 +10,23 @@ CREATE TABLE company (
 );
 
 CREATE TABLE job_listing (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    jid INT AUTO_INCREMENT,
     company_id INT,
     job_title VARCHAR(255),
     descp TEXT,
     pay DECIMAL(10, 2),
-    position VARCHAR(255),
-    jopen BOOLEAN,
-    userid VARCHAR(10),
-    FOREIGN KEY (company_id) REFERENCES company(id),
-    FOREIGN KEY (userid) REFERENCES user_table(userid)
-);
+    position VARCHAR(255)
+)
 
 CREATE TABLE user_table(
-    userid VARCHAR(10),
+    userid INT(10) AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(25) ,
     pass VARCHAR(50),
     tokenid INT(7),
     email VARCHAR(50),
-    addr VARCHAR(35),
-    education VARCHAR(150),
-    yearsofexperiance INT(2),
-    workhistory VARCHAR(200),
-    socialmediaaccounts VARCHAR(200),
-    PRIMARY KEY (userid),
-    UNIQUE (username)
+);
+
+CREATE TABLE resumes(
+userid INT(10) UNIQUE,
+    resumes TEXT
 );

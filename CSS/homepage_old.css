@@ -6,9 +6,8 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .div8{
@@ -47,7 +46,7 @@
 
 
 .list-container {
-  max-height: 100svh;
+  max-height: 559px;
   /* Set the maximum height of the container */
   overflow-y: auto;
   /* Enable vertical scrolling */
@@ -69,7 +68,7 @@
 }
 
 
-a {
+li input {
   display: inline-block;
   padding-top: 10px;
   padding-left: 50px;

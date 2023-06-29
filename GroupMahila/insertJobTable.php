@@ -7,7 +7,7 @@ $database = "mahila";
 $con = new mysqli($host, $username, $password, $database);
 if (!$con)
 {
-die('Could not connect: ' . mysql_error());
+die('Could not connect: ' . mysqli_connect_error());
 }
 
 $con->select_db($database);
@@ -27,5 +27,5 @@ if ($con->query($sql) === TRUE) {
     echo "Error creating table 'job_listing': " . $con->error;
 }
 
-mysql_close($con);
+mysqli_close($con);
 ?>

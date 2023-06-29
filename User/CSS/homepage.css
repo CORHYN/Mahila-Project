@@ -1,3 +1,7 @@
+:root{
+    --page_font: Comfortaa, sans-serif;
+}
+
 body {
     padding: 0%;
     margin: 0%;
@@ -34,11 +38,21 @@ body {
 }
 
 .navbar ul li a {
-    font-family: Comfortaa, sans-serif;
+    font-family: var(--page_font);
     text-decoration: none;
     color: #98a2a2;
     text-transform: uppercase;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
 }
+
+.navbar ul li a:hover{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    top: -5px;
+}
+
+
 
 .navbar ul li form.search{
     padding-bottom: 6px;
@@ -46,7 +60,7 @@ body {
 }
 
 .navbar ul li form.search input[type="search"]{
-    font-family: Comfortaa, sans-serif;
+    font-family: var(--page_font);
 }
 
 .search {
@@ -76,28 +90,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 }
 
 .welcomebox {
+    animation: dropIn 1s ease forwards;
     margin-top: 20px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 25px;
     padding-right: 25px;
     width: 75%;
-    height: 500px;
+    height: fit-content;
     background-color: #ffffff67;
-    font-family: Comfortaa, sans-serif;
-    overflow: scroll;
+    font-family: var(--page_font);
+}
+@keyframes dropIn{
+    from {transform: translateY(-1500px);}
+    to {transform: translateY(0);}
 }
 
 .welcomebox p {
-    font-family: Comfortaa, sans-serif;
+    font-family: var(--page_font);
     line-height: 1.5;
     color: #333;
     margin: 20px;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: none;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -116,4 +135,14 @@ h2 {
     height: 75px;
     width: auto;
     cursor: pointer;
+}
+
+.homepage_images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homepage_images img{
+    margin-left: 30px;
+    margin-right: 30px;
 }

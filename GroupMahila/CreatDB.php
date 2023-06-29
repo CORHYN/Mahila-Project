@@ -17,5 +17,5 @@ if ($con->query($sql) === TRUE) {
     echo "Error creating database: " . $con->error;
 }
 
-mysql_close($con);
+mysqli_close($con);
 ?>

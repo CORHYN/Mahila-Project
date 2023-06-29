@@ -1,0 +1,28 @@
+:root{
+    --page_font: Comfortaa, sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, .02), rgba(0, 0, 0, 0.5)), url(cyan-background.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+}
+
+.loginbox{
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff67;
+    font-family: var(--page_font);
+    padding: 100px;
+}

@@ -28,8 +28,9 @@ mysqli_close($con);
 <html>
 
 <head>
-  <title>Home Page</title>
+  <title>Jobs Page</title>
   <link rel="stylesheet" href="CSS/homepage.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="CSS/companylistofjobs.css?v=<?php echo time(); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:ital@1&family=Sora:wght@300&display=swap" rel="stylesheet">
@@ -54,5 +55,31 @@ mysqli_close($con);
         </ul>
       </div>
     </div>
+    <div class="jobs">
+      <div class="jobsbox">
+        <?php
+        if (!isset($_POST['company_id'])) {
+        } else {
+          $company_id = $_POST['company_id'];
+          $con = mysqli_connect("localhost", "root", "", "mahila");
+          $resultsc = mysqli_query($con, "SELECT job_title,descp,pay,position FROM job_listing WHERE company_id=$company_id");
+          echo "<ul>";
+          while ($row = mysqli_fetch_array($resultsc)) {
+            echo "<li>
+              <h4>$row[job_title]</h4>
+              <p>$row[descp]</p>
+              <p>Salary : $row[pay]</p>
+              <p>Postion : $row[position]</p>
+              <form action='apply.php' method='post'>
+                <input type='submit' value='Apply'>
+              </form>
+            </li>";
+          }
+          echo "</ul>";
+          mysqli_close($con);
+        } ?>
+      </div>
+    </div>
 </body>
+
 </html>

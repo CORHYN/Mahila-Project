@@ -1,0 +1,37 @@
+.jobs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jobsbox{
+    margin-top: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 800px;
+    height: auto;
+    background-color: #ffffff67;
+    font-family: Comfortaa, sans-serif;
+}
+
+.jobsbox ul li{
+    list-style: none;
+    margin: 30px 20px;
+}
+
+.jobsbox ul li form input[type="submit"]{
+    font-family: var(--page_font);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    /* border-radius: 30px;
+    background: linear-gradient(to left, #ffffff67, rgba(255,255,255,0.5));
+    width: 80px;
+    height: 32px; */
+    font-size: x-large;
+    cursor: pointer;
+}

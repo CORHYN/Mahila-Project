@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>User Registration</title>
     <?php
-    $con = mysqli_connect("localhost","root","");
-    mysqli_select_db($con,"mahila");
+    $con = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($con, "mahila");
     if ($_POST) {
         mysqli_select_db($con, "mahila");
         $username = $_POST['username'];
@@ -50,30 +51,37 @@
             return true;
         }
     </script>
-    <link rel="stylesheet" href="CSS/registration.css">
+    <link rel="stylesheet" href="CSS/registration.css?v=<?php echo time(); ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:ital@1&family=Sora:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="registration-form">
-        <h2>User Registration</h2>
-        <form action="registration.php" method="post" onsubmit="return validateForm();" id="f">
-            <div class="username">
-                <label for="username">Username:</label><br>
-                <input type="text" name="username" id="username" class="text" required maxlength="25"><br><br>
+    <div class="container">
+            <div class="registration-form">
+                <h2>User Registration</h2>
+                <form action="registration.php" method="post" onsubmit="return validateForm();" id="f">
+                    <div class="username">
+                        <label for="username">Username:</label><br>
+                        <input type="text" name="username" id="username" class="text" required maxlength="25"><br><br>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" class="text" required maxlength="50"><br><br>
+                    </div>
+                    <div class="password">
+                        <label for="password">Password:</label><br>
+                        <input type="password" name="password" id="password" class="text" required maxlength="50"><br><br>
+                    </div>
+                    <div class="retype-password">
+                        <label for="retype-password">Confirm Password:</label><br>
+                        <input type="password" name="retype-password" id="retype-password" class="text" required maxlength="50"><br><br>
+                    </div>
+                    <input type="submit" value="Register" class="register">
+                </form>
             </div>
-            <div class="email">
-                <label for="email">Email:</label>
-                <input type="email" name="email" class="text" required maxlength="50"><br><br>
-            </div>
-            <div class="password">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" class="text" required maxlength="50"><br><br>
-            </div>
-            <div class="retype-password">
-                <label for="retype-password">Confirm Password:</label>
-                <input type="password" name="retype-password" id="retype-password" class="text" required maxlength="50"><br><br>
-            </div>
-            <input type="submit" value="Register" class="register">
-        </form>
     </div>
 </body>
+
 </html>

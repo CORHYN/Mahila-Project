@@ -4,6 +4,11 @@
 <head>
   <title>Login</title>
   <link rel="stylesheet" href="CSS/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:ital@1&family=Sora:wght@300&display=swap"
+    rel="stylesheet">
   <script>
     function gotoreg() {
       window.location.href = "registration.php";
@@ -12,11 +17,35 @@
       document.getElementById("loginform").reset();
     }
   </script>
+  <style>
+    .input {
+      outline: none;
+      width: 260px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .login {
+      font-family: Comfortaa, sans-serif;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(to left, #ffffff67, rgba(255, 255, 255, 0.5));
+      width: 80px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    .login:hover{
+      background: linear-gradient(to top, #98a2a2, rgba(255, 255, 255, 0.5));
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="loginbox">
+    <div class="loginbox" style="background-color: #f1f0f0;">
       <img src="CSS/logo.png" alt="" style="height: 100px;">
       <form action="authentication.php" method="post" id="loginform">
         <input class="input" type="text" id="username" name="username" placeholder="USERNAME" required> <br>
@@ -24,7 +53,7 @@
         <br>
         <div class="button">
           <input class="login" id="login" type="reset" value="Log in" onclick="submit()">
-          <button type="reset" onclick="gotoreg()" id="Sign-Up">Sign-Up</button>
+          <button class="login" type="reset" onclick="gotoreg()" id="Sign-Up">Sign-Up</button>
         </div>
       </form>
     </div>

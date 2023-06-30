@@ -28,7 +28,7 @@ mysqli_close($con);
 <html>
 
 <head>
-  <title>Home Page</title>
+  <title>Companies</title>
   <link rel="stylesheet" href="CSS/homepage.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="CSS/listofcompanies.css?v=<?php echo time(); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@ mysqli_close($con);
       <div class="companiesbox">
         <?php
         $con = mysqli_connect("localhost", "root", "", "mahila");
-        $resultsc = mysqli_query($con, "SELECT cname,year_of_founding,number_of_employees FROM company");
+        $resultsc = mysqli_query($con, "SELECT id,cname,year_of_founding,number_of_employees FROM company");
         ?>
         <ul>
           <?php
@@ -67,6 +67,7 @@ mysqli_close($con);
             echo "<li>
               <form action='companylistofjobs.php' method='post'>
                 <input type='submit' value='$row[cname]'>
+                <input type='hidden' name='company_id' value='$row[id]'>
               </form>
               <p>Founded Year :$row[year_of_founding] </p>
               <p>Number of Employees:$row[number_of_employees]</p>

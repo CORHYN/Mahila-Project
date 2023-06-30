@@ -13,7 +13,7 @@ if ($con->connect_error) {
 
 $Cname = $_POST['cname'];
 $RegistrationNo = $_POST['registrationNo'];
-$Company_id = $_POST['company_id'];
+//$Company_id = $_POST['company_id'];
 $Email = $_POST['email'];
 $Password = $_POST['password'];
 $FoundYear = $_POST['foundYear'];
@@ -27,8 +27,8 @@ if ($checkResult->num_rows > 0) {
         window.location.href = "CompanyRegister.html";
     </script>';
 } else {
-    $sql = "INSERT INTO company (cname, registration_number, company_id, email, pass, year_of_founding, number_of_employees)
-    VALUES ('$Cname', '$RegistrationNo', '$Company_id', '$Email', '$Password', '$FoundYear', '$EmployeeNumber')";
+    $sql = "INSERT INTO company (cname, registration_number,  email, pass, year_of_founding, number_of_employees)
+    VALUES ('$Cname', '$RegistrationNo', '$Email', '$Password', '$FoundYear', '$EmployeeNumber')";
 
     if ($con->query($sql) === true) {
         echo '<script>

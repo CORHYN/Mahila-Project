@@ -16,7 +16,6 @@ $sql1 = "CREATE TABLE company (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cname VARCHAR(255),
     registration_number VARCHAR(50),
-    company_id VARCHAR(50),
     email VARCHAR(255),
     pass VARCHAR(255),
     year_of_founding YEAR,

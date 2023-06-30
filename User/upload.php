@@ -44,7 +44,7 @@ if (isset($_POST['submit']) && isset($_FILES['my_file'])) {
             $img_ex_lc = strtolower($img_ex);
             $allowed_exs = array("jpg", "jpeg", "png", "pdf");
             if (in_array($img_ex_lc, $allowed_exs)) {
-                $new_img_name = uniqid("IMG", true) . '.' . $img_ex_lc;
+                $new_img_name = $userid. '.' . $img_ex_lc;
                 $results = mysqli_query($con, "SELECT * FROM resumes WHERE userid=$userid");
                 if (mysqli_affected_rows($con) > 0) {
                     $row = mysqli_fetch_array($results);

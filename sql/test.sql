@@ -119,3 +119,10 @@ VALUES (10, 'Rocket Engineer', 'We are seeking a talented rocket engineer to des
 
 INSERT INTO job_listing (company_id, job_title, descp, pay, position) 
 VALUES (10, 'Embedded Systems Engineer', 'Join our team of embedded systems engineers to develop control systems for our space vehicles.', 100000.00, 'Full-time');
+
+CREATE TABLE applied(
+	jid INT(11),
+    userid INT(10),
+    company_id INT(11),
+    resumes TEXT
+);

@@ -30,6 +30,7 @@ mysqli_close($con);
 <head>
   <title>Home Page</title>
   <link rel="stylesheet" href="CSS/homepage.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="CSS/listofcompanies.css?php echo time(); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:ital@1&family=Sora:wght@300&display=swap" rel="stylesheet">
@@ -54,5 +55,31 @@ mysqli_close($con);
         </ul>
       </div>
     </div>
+    <div class="companies">
+      <div class="companiesbox">
+        <?php
+        if (isset($_POST['searchb'])) {
+          $con = mysqli_connect("localhost", "root", "", "mahila");
+          $value = $_POST['value'];
+          $resultsc = mysqli_query($con, "SELECT id,cname,year_of_founding,number_of_employees FROM company WHERE cname='$value'");
+          echo "<p> Found ".mysqli_affected_rows($con)."</p><br>";
+          echo "<ul>";
+          while ($row = mysqli_fetch_array($resultsc)) {
+            echo "<li>
+              <form action='companylistofjobs.php' method='post'>
+                <input type='submit' value='$row[cname]'>
+                <input type='hidden' name='company_id' value='$row[id]'>
+              </form>
+              <p>Founded Year :$row[year_of_founding] </p>
+              <p>Number of Employees:$row[number_of_employees]</p>
+            </li>";
+          }
+          echo "</ul>";
+          mysqli_close($con);
+        } else {
+        } ?>
+      </div>
+    </div>
 </body>
+
 </html>

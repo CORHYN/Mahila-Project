@@ -59,7 +59,7 @@ mysqli_close($con);
       <div class="companiesbox">
         <?php
         $con = mysqli_connect("localhost", "root", "", "mahila");
-        $resultsc = mysqli_query($con, "SELECT id,cname,year_of_founding,number_of_employees FROM company");
+        $resultsc = mysqli_query($con, "SELECT id,cname,email,year_of_founding,number_of_employees FROM company");
         ?>
         <ul>
           <?php
@@ -71,6 +71,7 @@ mysqli_close($con);
               </form>
               <p>Founded Year :$row[year_of_founding] </p>
               <p>Number of Employees:$row[number_of_employees]</p>
+              <p>CONTACT : $row[email] </p>
             </li>";
           }
           ?>

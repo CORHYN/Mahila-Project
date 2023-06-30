@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -19,13 +20,16 @@ if ($con->connect_error) {
 
 $sql = "SELECT * FROM company WHERE email = '$email' AND pass = '$password'";
 $result = $con->query($sql);
-
+$row = mysqli_fetch_array($result);
 if ($result->num_rows == 1) {
-
+    $_SESSION['id'] = $row['id'];
     header("Location: homepage.php");
     exit();
 } else {
-      
+    echo '<script>
+    alert("Plese Enter Correct Email And Password.");
+    window.location.href = "CompanyLogin.html";
+           </script>';
 }
 
 $con->close();

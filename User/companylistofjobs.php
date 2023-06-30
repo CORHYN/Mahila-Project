@@ -62,18 +62,30 @@ mysqli_close($con);
         } else {
           $company_id = $_POST['company_id'];
           $con = mysqli_connect("localhost", "root", "", "mahila");
-          $resultsc = mysqli_query($con, "SELECT job_title,descp,pay,position FROM job_listing WHERE company_id=$company_id");
+          $resultsc = mysqli_query($con, "SELECT jid,job_title,descp,pay,position FROM job_listing WHERE company_id=$company_id");
           echo "<ul>";
-          while ($row = mysqli_fetch_array($resultsc)) {
-            echo "<li>
+          if (mysqli_affected_rows($con) == 0) {
+            echo "<p>No Jobs Listed For this Company</p>";
+          } else {
+            while ($row = mysqli_fetch_array($resultsc)) {
+              echo "<li>
               <h4>$row[job_title]</h4>
               <p>$row[descp]</p>
               <p>Salary : $row[pay]</p>
-              <p>Postion : $row[position]</p>
-              <form action='apply.php' method='post'>
-                <input type='submit' value='Apply'>
-              </form>
-            </li>";
+              <p>Postion : $row[position]</p>";
+              echo "<form action='apply.php' method='post'>";
+              $applied_sql = "SELECT * FROM applied WHERE jid=$row[jid] AND company_id=$company_id AND userid=$userid; ";
+              $check_if_applied = mysqli_query($con, $applied_sql);
+              if (mysqli_affected_rows($con) == 0) {
+                echo "<input type='submit' name='Apply' value='Apply'>";
+                echo "<input type='hidden' name='company_id' value='$company_id'>
+                      <input type='hidden' name='jid' value='$row[jid]'>";
+              } else {
+                echo "<p>Applied</p>";
+              }
+              echo "</form>";
+              echo "</li>";
+            }
           }
           echo "</ul>";
           mysqli_close($con);

@@ -22,7 +22,11 @@ body{
 .loginbox{
     width: fit-content;
     height: fit-content;
-    background-color: #ffffff67;
+    background-color: #f1f0f0;
     font-family: var(--page_font);
     padding: 100px;
+}
+img{
+    width: auto;
+    height: 100px;
 }

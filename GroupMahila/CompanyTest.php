@@ -25,8 +25,10 @@ if ($result->num_rows == 1) {
     header("Location: homepage.php");
     exit();
 } else {
-   
-    echo "Email or password error !";   
+      echo '<script>
+    alert("Plese Enter Correct Email And Password.");
+    window.location.href = "CompanyLogin.html";
+           </script>';  
 }
 
 $con->close();

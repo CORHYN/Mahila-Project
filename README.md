@@ -4,8 +4,7 @@
 3.  Then simple go into either the user or Group Mahila folder
 4.  Click on the login.html or Companylogin.html
 
-|Name| Matric Number|
-|------------|--------------|
-|Marzouq Hashmi|A21EC0266|
-|Ma ZeJun|A21EC4009|
-|Li Kaien|A21EC4032|
+| Module | Name | Date|
+|---------|-------|-------|
+Users Marz 30/06/23
+Company Majun 30/06/23

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2023 at 01:12 PM
+-- Generation Time: Jul 02, 2023 at 11:35 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,10 @@ CREATE TABLE `applied` (
 --
 
 INSERT INTO `applied` (`jid`, `userid`, `company_id`, `resumes`) VALUES
-(1, 1, 1, 'IMG649e9feb365638.65287588.jpg');
+(1, 1, 1, 'IMG649e9feb365638.65287588.jpg'),
+(1, 3, 1, '3.png'),
+(1, 4, 1, '4.png'),
+(2, 4, 1, '4.png');
 
 -- --------------------------------------------------------
 
@@ -72,7 +75,8 @@ INSERT INTO `company` (`id`, `cname`, `email`, `pass`, `registration_number`, `y
 (8, 'Netflix', 'info@netflix.com', 'netflix123', '321789654', '1997', 10000),
 (9, 'Uber', 'info@uber.com', 'uber123', '654321789', '2009', 22000),
 (10, 'SpaceX', 'info@spacex.com', 'spacex123', '789654321', '2002', 8000),
-(11, 'Intel', 'Intel@gmail.com', '1234', '8283132', '1978', 20000);
+(11, 'Intel', 'Intel@gmail.com', '1234', '8283132', '1978', 20000),
+(12, 'mahila', 'mahila@qq.com', 'mahila', '123', '2021', 100);
 
 -- --------------------------------------------------------
 
@@ -113,7 +117,9 @@ INSERT INTO `job_listing` (`jid`, `company_id`, `job_title`, `descp`, `pay`, `po
 (17, 9, 'Operations Manager', 'We are looking for an experienced operations manager to oversee and streamline our operational processes.', 100000.00, 'Full-time'),
 (18, 9, 'Business Analyst', 'Join our business analysis team to analyze market trends and identify business opportunities.', 80000.00, 'Full-time'),
 (19, 10, 'Rocket Engineer', 'We are seeking a talented rocket engineer to design and develop advanced rocket propulsion systems.', 120000.00, 'Full-time'),
-(20, 10, 'Embedded Systems Engineer', 'Join our team of embedded systems engineers to develop control systems for our space vehicles.', 100000.00, 'Full-time');
+(20, 10, 'Embedded Systems Engineer', 'Join our team of embedded systems engineers to develop control systems for our space vehicles.', 100000.00, 'Full-time'),
+(21, 1, 'Electrical Consultant', 'We are looking for a electrical consultant for our formula student team', 20000.00, 'Senior'),
+(22, 1, 'se', 'good job', 10000.00, 'full time');
 
 -- --------------------------------------------------------
 
@@ -132,7 +138,9 @@ CREATE TABLE `resumes` (
 
 INSERT INTO `resumes` (`userid`, `resumes`) VALUES
 (1, 'IMG649e9feb365638.65287588.jpg'),
-(2, '2.jpg');
+(2, '2.jpg'),
+(3, '3.png'),
+(4, '4.png');
 
 -- --------------------------------------------------------
 
@@ -153,8 +161,10 @@ CREATE TABLE `user_table` (
 --
 
 INSERT INTO `user_table` (`userid`, `username`, `pass`, `tokenid`, `email`) VALUES
-(1, 'user1', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 8439546, 'user1@gmail.com'),
-(2, 'user2', '8cb2237d0679ca88db6464eac60da96345513964', 846324, 'user2@gmail.com');
+(1, 'user1', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 4427265, 'user1@gmail.com'),
+(2, 'user2', '8cb2237d0679ca88db6464eac60da96345513964', 846324, 'user2@gmail.com'),
+(3, 'user3', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 7929177, 'user3@gmail.com'),
+(4, 'user4', '7c4a8d09ca3762af61e59520943dc26494f8941b', 3427953, 'user4@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -186,19 +196,19 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `job_listing`
 --
 ALTER TABLE `job_listing`
-  MODIFY `jid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `jid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

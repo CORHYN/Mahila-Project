@@ -74,6 +74,7 @@ img{
 <body>
 
     <?php
+    session_start();
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -87,7 +88,7 @@ img{
 
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $company_id = $_POST['company_id'];
+        $company_id = $_SESSION['id'];
         $job_title = $_POST['job_title'];
         $descp = $_POST['descp'];
         $pay = $_POST['pay'];
@@ -148,9 +149,6 @@ img{
         <h2>Create job</h2>
         <div class="container1">
         <form method="post" class="registration-form">
-            <label for="company_id">Company ID:</label>
-            <input type="text" name="company_id" id="company_id" class="text">
-
             <label for="job_title">Job title:</label>
             <input type="text" name="job_title" id="job_title" class="text">
 

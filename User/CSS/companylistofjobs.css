@@ -24,9 +24,7 @@
 .jobsbox ul li form input[type="submit"]{
     font-family: var(--page_font);
     margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
+    padding: 10px;
     background-color: transparent;
     /* border-radius: 30px;
     background: linear-gradient(to left, #ffffff67, rgba(255,255,255,0.5));
@@ -34,7 +32,16 @@
     height: 32px; */
     font-size: x-large;
     cursor: pointer;
+    border-style:dotted;
+    border-color: black;
+    transition: background-color ease-in 0.3s;
 }
+
+.jobsbox ul li form input[type="submit"]:hover{
+    background-color: black;
+    color: white    ;
+}    
+
 
 .jobsbox ul li form p{
     font-family: var(--page_font);
